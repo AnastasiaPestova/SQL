@@ -1,6 +1,6 @@
 CREATE TABLE consumption (
-coffee_point_id INT,
-cookies INT
+point_id INT,
+sale INT
 );
 -- insert some values
 INSERT INTO consumption VALUES (1,100);
@@ -24,8 +24,8 @@ INSERT INTO consumption VALUES (18,999);
 
  
 CREATE TABLE buildings (
-coffee_point_id INT, 
-coffee_point_name VARCHAR(32),
+point_id INT, 
+point_name VARCHAR(32),
 office_id INT, 
 office_name VARCHAR(32)
 );
@@ -52,6 +52,6 @@ INSERT INTO buildings VALUES (18,'u',18, 'uu');
  
 -- fetch some values
 Select buildings.office_name   from buildings ,consumption
-where consumption.cookies<1000  and buildings.coffee_point_id=consumption.coffee_point_id
-ORDER BY consumption.cookies DESC
+where consumption.sale<1000  and buildings.point_id=consumption.point_id
+ORDER BY consumption.sale DESC
 limit 10
