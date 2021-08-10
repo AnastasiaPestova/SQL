@@ -1,0 +1,57 @@
+CREATE TABLE consumption (
+coffee_point_id INT,
+cookies INT
+);
+-- insert some values
+INSERT INTO consumption VALUES (1,100);
+INSERT INTO consumption VALUES (2,200 );
+INSERT INTO consumption VALUES (3,300);
+INSERT INTO consumption VALUES (4,400);
+INSERT INTO consumption VALUES (5,500);
+INSERT INTO consumption VALUES (6,600);
+INSERT INTO consumption VALUES (7,7000);
+INSERT INTO consumption VALUES (8,800 );
+INSERT INTO consumption VALUES (9,900);
+INSERT INTO consumption VALUES (10,850);
+INSERT INTO consumption VALUES (11,7500);
+INSERT INTO consumption VALUES (12,650);
+INSERT INTO consumption VALUES (13,550);
+INSERT INTO consumption VALUES (14,450 );
+INSERT INTO consumption VALUES (15,1000);
+INSERT INTO consumption VALUES (16,1200);
+INSERT INTO consumption VALUES (17,2500);
+INSERT INTO consumption VALUES (18,999);
+
+ 
+CREATE TABLE buildings (
+coffee_point_id INT, 
+coffee_point_name VARCHAR(32),
+office_id INT, 
+office_name VARCHAR(32)
+);
+-- insert some values
+INSERT INTO buildings VALUES (1,'a',1, 'aa');
+INSERT INTO buildings VALUES (2, 'b',2, 'bb');
+INSERT INTO buildings VALUES (3,'c',3, 'cc');
+INSERT INTO buildings VALUES (4,'d', 4, 'dd');
+INSERT INTO buildings VALUES (5, 'e',5 , 'ee');
+INSERT INTO buildings VALUES (6,'f',6, 'ff');
+INSERT INTO buildings VALUES (7, 'g',7, 'gg');
+INSERT INTO buildings VALUES (8,'k',8, 'kk');
+INSERT INTO buildings VALUES (9,'l', 9, 'll');
+INSERT INTO buildings VALUES (10, 'm',10 , 'mm');
+INSERT INTO buildings VALUES (11,'n',11, 'nn');
+INSERT INTO buildings VALUES (12, 'o',12, 'oo');
+INSERT INTO buildings VALUES (13,'p',13, 'pp');
+INSERT INTO buildings VALUES (14,'q', 14, 'qq');
+INSERT INTO buildings VALUES (15, 'r',15 , 'rr');
+INSERT INTO buildings VALUES (16,'s',16, 'ss');
+INSERT INTO buildings VALUES (17, 't',17, 'tt');
+INSERT INTO buildings VALUES (18,'u',18, 'uu');
+
+ 
+-- fetch some values
+Select buildings.office_name   from buildings ,consumption
+where consumption.cookies<1000  and buildings.coffee_point_id=consumption.coffee_point_id
+ORDER BY consumption.cookies DESC
+limit 10
